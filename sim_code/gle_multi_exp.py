@@ -42,7 +42,7 @@ def integrate_gle_multi_exp(nsteps, dt, m, gammas, taus, x0, y0, v0, kT,U0):
         ky1 = np.zeros((n_exp,))
         for i in range(n_exp):
             kv1 += -dt*(ks[i]*(xx-yy[i]))/m
-            ky1[i]=-dt*((yy[i]-xx)/taus[i] + fr[i])
+            ky1[i]=-dt*((yy[i]-xx)/taus[i] - fr[i])
             
         x1=xx+kx1/2
         v1=vv+kv1/2
@@ -55,7 +55,7 @@ def integrate_gle_multi_exp(nsteps, dt, m, gammas, taus, x0, y0, v0, kT,U0):
         ky2 = np.zeros((n_exp,))
         for i in range(n_exp):
             kv2 += -dt*(ks[i]*(x1-y1[i]))/m
-            ky2[i]=-dt*((y1[i]-x1)/taus[i] + fr[i])
+            ky2[i]=-dt*((y1[i]-x1)/taus[i] - fr[i])
             
         
         x2=xx+kx2/2
@@ -70,7 +70,7 @@ def integrate_gle_multi_exp(nsteps, dt, m, gammas, taus, x0, y0, v0, kT,U0):
         ky3 = np.zeros((n_exp,))
         for i in range(n_exp):
             kv3 += -dt*(ks[i]*(x2-y2[i]))/m
-            ky3[i]=-dt*((y2[i]-x2)/taus[i] + fr[i])
+            ky3[i]=-dt*((y2[i]-x2)/taus[i] - fr[i])
             
         x3=xx+kx3
         v3=vv+kv3
@@ -83,7 +83,7 @@ def integrate_gle_multi_exp(nsteps, dt, m, gammas, taus, x0, y0, v0, kT,U0):
         ky4 = np.zeros((n_exp,))
         for i in range(n_exp):
             kv4 += -dt*(ks[i]*(x3-y3[i]))/m
-            ky4[i]=-dt*((y3[i]-x3)/taus[i] + fr[i])
+            ky4[i]=-dt*((y3[i]-x3)/taus[i] - fr[i])
             
             
         xx=xx + (kx1+2*kx2+2*kx3+kx4)/6
@@ -136,7 +136,7 @@ def integrate_gle_multi_exp_arb_pot(nsteps, dt, m, gammas, taus, x0, y0, v0, kT,
         ky1 = np.zeros((n_exp,))
         for i in range(n_exp):
             kv1 += -dt*(ks[i]*(xx-yy[i]))/m
-            ky1[i]=-dt*((yy[i]-xx)/taus[i] + fr[i])
+            ky1[i]=-dt*((yy[i]-xx)/taus[i] - fr[i])
             
         x1=xx+kx1/2
         v1=vv+kv1/2
@@ -150,7 +150,7 @@ def integrate_gle_multi_exp_arb_pot(nsteps, dt, m, gammas, taus, x0, y0, v0, kT,
         ky2 = np.zeros((n_exp,))
         for i in range(n_exp):
             kv2 += -dt*(ks[i]*(x1-y1[i]))/m
-            ky2[i]=-dt*((y1[i]-x1)/taus[i] + fr[i])
+            ky2[i]=-dt*((y1[i]-x1)/taus[i] - fr[i])
             
         
         x2=xx+kx2/2
@@ -165,7 +165,7 @@ def integrate_gle_multi_exp_arb_pot(nsteps, dt, m, gammas, taus, x0, y0, v0, kT,
         ky3 = np.zeros((n_exp,))
         for i in range(n_exp):
             kv3 += -dt*(ks[i]*(x2-y2[i]))/m
-            ky3[i]=-dt*((y2[i]-x2)/taus[i] + fr[i])
+            ky3[i]=-dt*((y2[i]-x2)/taus[i] - fr[i])
             
         x3=xx+kx3
         v3=vv+kv3
@@ -179,7 +179,7 @@ def integrate_gle_multi_exp_arb_pot(nsteps, dt, m, gammas, taus, x0, y0, v0, kT,
         ky4 = np.zeros((n_exp,))
         for i in range(n_exp):
             kv4 += -dt*(ks[i]*(x3-y3[i]))/m
-            ky4[i]=-dt*((y3[i]-x3)/taus[i] + fr[i])
+            ky4[i]=-dt*((y3[i]-x3)/taus[i] - fr[i])
             
             
         xx=xx + (kx1+2*kx2+2*kx3+kx4)/6
