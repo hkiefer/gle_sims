@@ -1,4 +1,4 @@
-# Integrate Langevin using 4th order Runga-Kutta algorithm
+# Integrate Langevin equation using 4th order Runga-Kutta algorithm
 import numpy as np
 import math
 from numba import njit

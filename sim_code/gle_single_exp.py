@@ -1,4 +1,4 @@
-# Integrate GLE using 4th order Runga-Kutta algorithm
+# Integrate GLE with single-exponential memory using 4th order Runga-Kutta algorithm
 import numpy as np
 import math
 from numba import njit

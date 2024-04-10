@@ -1,6 +1,7 @@
 import numpy as np
 
-# Evaluting fourier integrals using Filon's trapezoidal rule
+# Evaluating fourier integrals using Filon's trapezoidal rule
+#Function is good for FFT as it computes high-frequency behaviour much better
 
 def _filon_wtn(theta):
     # From theta, calculate wt and wn

@@ -1,3 +1,5 @@
+# Integrate GLE with multiple oscillating, decaying kernels using 4th order Runga-Kutta algorithm 
+
 import numpy as np
 import math
 

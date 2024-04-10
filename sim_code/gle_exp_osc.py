@@ -1,4 +1,5 @@
-#embedded Markovian simulation for an oscillating, decaying kernel, where tau_m is very long
+# Integrate GLE with an oscillating, decaying kernel using 4th order Runga-Kutta algorithm 
+
 import numpy as np
 import math
 from numba import njit
