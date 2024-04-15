@@ -71,7 +71,7 @@ def integrate_sing_exp_noneq_harm_pot(nsteps=1e6, dt=0.01, tauD=1,taum=1,tauv=1,
         xi=np.sqrt(2/dt)*np.random.normal(0.0,1.0)
         
         kx1=dt*vv
-        kv1 = dt*tauD/taum*(yvy+yRy-k0*xx)
+        kv1 = dt*tauD/taum*(yvy+yRy-k0*xx/kT)
         kyv1 = -dt*tauD/tauv*(yvy+vv)
         kyR1 = -dt*tauD/tauR*(yRy-xi)
         x1=xx+kx1/2
@@ -80,7 +80,7 @@ def integrate_sing_exp_noneq_harm_pot(nsteps=1e6, dt=0.01, tauD=1,taum=1,tauv=1,
         yR1 = yRy+kyR1/2
 
         kx2=dt*v1
-        kv2 = dt*tauD/taum*(yv1+yR1-k0*x1)
+        kv2 = dt*tauD/taum*(yv1+yR1-k0*x1/kT)
         kyv2 = -dt*tauD/tauv*(yv1+v1)
         kyR2 = -dt*tauD/tauR*(yR1-xi)
         x2=xx+kx2/2
@@ -89,7 +89,7 @@ def integrate_sing_exp_noneq_harm_pot(nsteps=1e6, dt=0.01, tauD=1,taum=1,tauv=1,
         yR2 = yRy+kyR2/2
 
         kx3=dt*v2
-        kv3 = dt*tauD/taum*(yv2+yR2-k0*x2)
+        kv3 = dt*tauD/taum*(yv2+yR2-k0*x2/kT)
         kyv3 = -dt*tauD/tauv*(yv2+v2)
         kyR3 = -dt*tauD/tauR*(yR2-xi)
         x3=xx+kx3
@@ -98,7 +98,7 @@ def integrate_sing_exp_noneq_harm_pot(nsteps=1e6, dt=0.01, tauD=1,taum=1,tauv=1,
         yR3 = yRy+kyR3
 
         kx4=dt*v3
-        kv4 = dt*tauD/taum*(yv3+yR3-k0*x3)
+        kv4 = dt*tauD/taum*(yv3+yR3-k0*x3/kT)
         kyv4 = -dt*tauD/tauv*(yv3+v3)
         kyR4 = -dt*tauD/tauR*(yR3-xi)
         
